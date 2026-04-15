@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://pingrab.app'),
+  metadataBase: new URL('https://pingrab-self.vercel.app'),
   title: {
     default: 'PinGrab — Pinterest Downloader for Images, Videos & GIFs',
     template: '%s | PinGrab'
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: 'PinGrab',
     title: 'PinGrab — Pinterest Downloader',
     description: 'Download Pinterest images, videos, GIFs in HD. Free and no login.',
-    url: 'https://pingrab.app'
+    url: 'https://pingrab-self.vercel.app'
   },
   twitter: {
     card: 'summary_large_image',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description: 'Download Pinterest images, videos, GIFs in HD.'
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: 'https://pingrab.app' }
+  alternates: { canonical: 'https://pingrab-self.vercel.app' }
 };
 
 export const viewport: Viewport = {
@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     description:
       'Free Pinterest downloader for images, videos and GIFs in HD quality.',
-    url: 'https://pingrab.app'
+    url: 'https://pingrab-self.vercel.app'
   };
 
   return (

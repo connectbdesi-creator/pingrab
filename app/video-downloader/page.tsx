@@ -17,11 +17,11 @@ export const metadata: Metadata = {
     'save pinterest video hd',
     'pinterest reels downloader'
   ],
-  alternates: { canonical: 'https://pingrab.app/video-downloader' },
+  alternates: { canonical: 'https://pingrab-self.vercel.app/video-downloader' },
   openGraph: {
     title: 'Pinterest Video Download — Save MP4 HD',
     description: 'Free Pinterest video download to MP4 in HD. No login.',
-    url: 'https://pingrab.app/video-downloader'
+    url: 'https://pingrab-self.vercel.app/video-downloader'
   }
 };
 

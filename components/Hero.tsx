@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import Downloader, { DownloaderMode } from './Downloader';
 
 export default function Hero({
@@ -28,7 +29,9 @@ export default function Hero({
           </h1>
           <p className="mt-4 md:mt-6 text-slate-600 md:text-lg max-w-2xl mx-auto">{subtitle}</p>
         </div>
-        <Downloader mode={mode} />
+        <Suspense fallback={<div className="h-20" />}>
+          <Downloader mode={mode} />
+        </Suspense>
       </div>
     </section>
   );

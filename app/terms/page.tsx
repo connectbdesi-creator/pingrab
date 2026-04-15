@@ -5,7 +5,7 @@ import Prose from '@/components/Prose';
 export const metadata: Metadata = {
   title: 'Terms of Service — PinGrab',
   description: 'The terms and conditions that govern your use of PinGrab.',
-  alternates: { canonical: 'https://pingrab.app/terms' }
+  alternates: { canonical: 'https://pingrab-self.vercel.app/terms' }
 };
 
 export default function TermsPage() {
@@ -73,7 +73,7 @@ export default function TermsPage() {
         <h2>7. DMCA and takedown</h2>
         <p>
           If you are a rights holder and believe content is being downloaded through the Service in a way
-          that infringes your rights, send a DMCA notice to <a href="mailto:dmca@pingrab.app">dmca@pingrab.app</a>
+          that infringes your rights, send a DMCA notice to <a href="mailto:dmca@pingrab-self.vercel.app">dmca@pingrab-self.vercel.app</a>
           with the infringing Pinterest URL and proof of ownership. We will investigate within 48 hours.
         </p>
 
@@ -98,7 +98,7 @@ export default function TermsPage() {
 
         <h2>11. Contact</h2>
         <p>
-          Questions about these Terms: <a href="mailto:legal@pingrab.app">legal@pingrab.app</a>
+          Questions about these Terms: <a href="mailto:legal@pingrab-self.vercel.app">legal@pingrab-self.vercel.app</a>
         </p>
       </Prose>
     </PageShell>

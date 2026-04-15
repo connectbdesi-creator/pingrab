@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PinGrab</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="hdr">
+      <div class="logo">P</div>
+      <div>
+        <h1>PinGrab</h1>
+        <p>Pinterest Downloader</p>
+      </div>
+    </header>
+
+    <section class="status" id="status">
+      <div class="spinner"></div>
+      <span>Checking page…</span>
+    </section>
+
+    <button class="primary" id="download" hidden>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>
+      </svg>
+      Download this Pin
+    </button>
+
+    <div class="tips">
+      <strong>How to use:</strong>
+      <ol>
+        <li>Browse Pinterest as usual.</li>
+        <li>Hover any pin — a red download button appears in the top-right.</li>
+        <li>Click it. Done.</li>
+      </ol>
+    </div>
+
+    <footer class="ftr">
+      <a href="https://pingrab-self.vercel.app" target="_blank" rel="noopener">pingrab-self.vercel.app</a>
+      <span>·</span>
+      <a href="https://pingrab-self.vercel.app/chrome-extension" target="_blank" rel="noopener">Help</a>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

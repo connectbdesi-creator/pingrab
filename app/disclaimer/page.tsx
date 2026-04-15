@@ -5,7 +5,7 @@ import Prose from '@/components/Prose';
 export const metadata: Metadata = {
   title: 'Disclaimer — PinGrab',
   description: 'PinGrab disclaimer. We are an independent tool, not affiliated with Pinterest.',
-  alternates: { canonical: 'https://pingrab.app/disclaimer' }
+  alternates: { canonical: 'https://pingrab-self.vercel.app/disclaimer' }
 };
 
 export default function DisclaimerPage() {

@@ -1,0 +1,60 @@
+.pingrab-dl-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #e60023;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.18s ease, transform 0.18s ease, background 0.18s ease;
+  padding: 0;
+  font: inherit;
+}
+
+[data-test-id="pin"]:hover .pingrab-dl-btn,
+[data-test-id="pinWrapper"]:hover .pingrab-dl-btn,
+div[data-test-pin-id]:hover .pingrab-dl-btn,
+div[role="listitem"]:hover .pingrab-dl-btn,
+.pingrab-dl-btn:focus-visible,
+.pingrab-dl-btn:hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pingrab-dl-btn:hover {
+  background: #cc001f;
+}
+
+.pingrab-dl-btn.pingrab-loading {
+  opacity: 1;
+  background: #94a3b8;
+  pointer-events: none;
+}
+
+.pingrab-dl-btn.pingrab-loading svg {
+  animation: pingrab-spin 0.8s linear infinite;
+}
+
+.pingrab-dl-btn.pingrab-ok {
+  opacity: 1;
+  background: #16a34a;
+}
+
+.pingrab-dl-btn.pingrab-err {
+  opacity: 1;
+  background: #f59e0b;
+}
+
+@keyframes pingrab-spin {
+  to { transform: rotate(360deg); }
+}

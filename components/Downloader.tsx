@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import {
   Download,
   Link as LinkIcon,
@@ -44,27 +45,48 @@ export default function Downloader({ mode = 'all' }: { mode?: DownloaderMode }) 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<PinResult | null>(null);
+  const searchParams = useSearchParams();
+  const autoRan = useRef(false);
+  const resultRef = useRef<HTMLDivElement | null>(null);
 
-  async function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
+  async function runFetch(target: string) {
     setError(null);
     setResult(null);
-    if (!url.trim()) return;
+    if (!target.trim()) return;
     setLoading(true);
     try {
       const res = await fetch('/api/fetch', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url })
+        body: JSON.stringify({ url: target })
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to fetch');
       setResult(data);
+      requestAnimationFrame(() =>
+        resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      );
     } catch (err: any) {
       setError(err.message);
     } finally {
       setLoading(false);
     }
+  }
+
+  useEffect(() => {
+    if (autoRan.current) return;
+    const fromQuery = searchParams.get('url');
+    if (fromQuery) {
+      autoRan.current = true;
+      setUrl(fromQuery);
+      runFetch(fromQuery);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
+
+  function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    runFetch(url);
   }
 
   async function pasteFromClipboard() {
@@ -91,7 +113,10 @@ export default function Downloader({ mode = 'all' }: { mode?: DownloaderMode }) 
 
   return (
     <section className="w-full">
-      <form onSubmit={onSubmit} className="bg-white rounded-2xl shadow-xl p-3 md:p-4 border border-slate-200">
+      <form
+        onSubmit={onSubmit}
+        className="bg-white rounded-2xl shadow-xl p-3 md:p-4 border border-slate-200"
+      >
         <div className="flex flex-col md:flex-row gap-2 md:gap-3">
           <div className="flex-1 flex items-center gap-2 border border-slate-200 rounded-xl px-3 md:px-4 py-3 focus-within:ring-2 focus-within:ring-brand-500 bg-slate-50">
             <LinkIcon size={18} className="text-slate-400 shrink-0" />
@@ -136,7 +161,10 @@ export default function Downloader({ mode = 'all' }: { mode?: DownloaderMode }) 
       )}
 
       {result && filtered.length > 0 && (
-        <div className="mt-6 md:mt-8 bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+        <div
+          ref={resultRef}
+          className="mt-6 md:mt-8 bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden scroll-mt-20"
+        >
           <div className="p-4 md:p-6 border-b bg-gradient-to-br from-slate-50 to-white">
             {result.title && <h2 className="font-bold text-lg">{result.title}</h2>}
             {result.description && (
@@ -184,9 +212,7 @@ export default function Downloader({ mode = 'all' }: { mode?: DownloaderMode }) 
               title="Images"
               icon={<ImageIcon size={18} />}
               items={filtered.filter((m) => m.type === 'image')}
-              render={(m, i) => (
-                <ImageCard key={i} m={m} href={downloadHref(m)} />
-              )}
+              render={(m, i) => <ImageCard key={i} m={m} href={downloadHref(m)} />}
               cols="grid-cols-2 md:grid-cols-3"
             />
           )}

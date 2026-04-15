@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     'pinterest image extension chrome',
     'pinterest video extension'
   ],
-  alternates: { canonical: 'https://pingrab.app/chrome-extension' },
+  alternates: { canonical: 'https://pingrab-self.vercel.app/chrome-extension' },
   openGraph: {
     title: 'PinGrab Chrome Extension',
     description: 'Download Pinterest pins with one click inside your browser.',
-    url: 'https://pingrab.app/chrome-extension'
+    url: 'https://pingrab-self.vercel.app/chrome-extension'
   }
 };
 

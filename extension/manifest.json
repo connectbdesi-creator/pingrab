@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "PinGrab — Pinterest Downloader",
+  "version": "1.0.0",
+  "description": "One-click download for Pinterest images, videos and GIFs in HD. No watermark, no login.",
+  "author": "PinGrab",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "PinGrab — open on Pinterest to download",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": [
+    "https://*.pinterest.com/*",
+    "https://*.pinimg.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.pinterest.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "download-current-pin": {
+      "suggested_key": { "default": "Alt+D" },
+      "description": "Download the currently open Pinterest pin"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*.png"],
+      "matches": ["https://*.pinterest.com/*"]
+    }
+  ]
+}
