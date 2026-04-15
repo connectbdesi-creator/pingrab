@@ -6,9 +6,33 @@
   const PROCESSED = 'pingrab-processed';
 
   function pinUrlFromContainer(container) {
-    const a = container.querySelector('a[href*="/pin/"]');
+    // 1. If we're already on a pin closeup page, use the address bar — most reliable.
+    if (/\/pin\/\d+/.test(location.href)) {
+      return location.href.split('?')[0].replace(/\/$/, '');
+    }
+
+    // 2. Search within the container.
+    let a = container.querySelector('a[href*="/pin/"]');
     if (a?.href) return a.href.split('?')[0];
-    if (/\/pin\//.test(location.href)) return location.href.split('?')[0];
+
+    // 3. Walk up the ancestor chain (feed cards sometimes wrap the <a> around the container).
+    let node = container.parentElement;
+    for (let i = 0; i < 8 && node; i++) {
+      if (node.tagName === 'A' && node.href?.includes('/pin/')) {
+        return node.href.split('?')[0];
+      }
+      const found = node.querySelector?.('a[href*="/pin/"]');
+      if (found?.href) return found.href.split('?')[0];
+      node = node.parentElement;
+    }
+
+    // 4. Fallback: reconstruct from data-pin-id or data-test-pin-id attribute.
+    const idAttr =
+      container.getAttribute('data-test-pin-id') ||
+      container.closest('[data-test-pin-id]')?.getAttribute('data-test-pin-id') ||
+      container.querySelector('[data-pin-id]')?.getAttribute('data-pin-id');
+    if (idAttr) return `https://www.pinterest.com/pin/${idAttr}/`;
+
     return null;
   }
 
@@ -50,8 +74,11 @@
     e.preventDefault();
     e.stopPropagation();
     const pinUrl = pinUrlFromContainer(container);
+    console.log('[PinGrab] resolved pin URL:', pinUrl);
     if (!pinUrl) {
-      console.warn('[PinGrab] no pin URL found');
+      alert(
+        'PinGrab could not detect the pin URL.\n\nOpen the pin in its own tab (click the pin to enter closeup view) and try again.'
+      );
       return;
     }
     const type = detectType(container);

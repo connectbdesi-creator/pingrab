@@ -75,8 +75,11 @@ export default function Downloader({ mode = 'all' }: { mode?: DownloaderMode }) 
 
   useEffect(() => {
     if (autoRan.current) return;
-    const fromQuery = searchParams.get('url');
-    if (fromQuery) {
+    const fromQuery =
+      searchParams.get('url') ||
+      searchParams.get('pin') ||
+      searchParams.get('link');
+    if (fromQuery && /pinterest\.com|pin\.it/i.test(fromQuery)) {
       autoRan.current = true;
       setUrl(fromQuery);
       runFetch(fromQuery);
