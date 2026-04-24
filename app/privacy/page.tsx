@@ -5,7 +5,7 @@ import Prose from '@/components/Prose';
 export const metadata: Metadata = {
   title: 'Privacy Policy — PinGrab',
   description: 'How PinGrab collects, uses and protects your data. Our full privacy policy.',
-  alternates: { canonical: 'https://pingrab-self.vercel.app/privacy' },
+  alternates: { canonical: 'https://pingrab.click/privacy' },
   robots: { index: true, follow: true }
 };
 
@@ -22,7 +22,7 @@ export default function PrivacyPage() {
       <Prose>
         <p>
           This Privacy Policy explains how PinGrab ("we", "us", "our") collects, uses and shares information
-          when you use <strong>pingrab-self.vercel.app</strong> and the PinGrab browser extension (collectively the
+          when you use <strong>pingrab.click</strong> and the PinGrab browser extension (collectively the
           "Service"). By using the Service you agree to the practices described here.
         </p>
 
@@ -92,7 +92,7 @@ export default function PrivacyPage() {
         <p>
           If you are located in the EEA, UK, California, or another jurisdiction with data protection laws,
           you have the right to access, correct, delete or port your personal data, and to withdraw
-          advertising consent. Contact <a href="mailto:privacy@pingrab-self.vercel.app">privacy@pingrab-self.vercel.app</a> to exercise
+          advertising consent. Contact <a href="mailto:privacy@pingrab.click">privacy@pingrab.click</a> to exercise
           any of these rights. We respond within 30 days.
         </p>
 
@@ -118,7 +118,7 @@ export default function PrivacyPage() {
 
         <h2>11. Contact</h2>
         <p>
-          Privacy questions: <a href="mailto:privacy@pingrab-self.vercel.app">privacy@pingrab-self.vercel.app</a>
+          Privacy questions: <a href="mailto:privacy@pingrab.click">privacy@pingrab.click</a>
         </p>
       </Prose>
     </PageShell>

@@ -6,7 +6,7 @@ import { Mail, Shield, FileText, MessageSquare } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Contact PinGrab',
   description: 'Get in touch with the PinGrab team for support, feedback, or partnership enquiries.',
-  alternates: { canonical: 'https://pingrab-self.vercel.app/contact' }
+  alternates: { canonical: 'https://pingrab.click/contact' }
 };
 
 export default function ContactPage() {
@@ -22,10 +22,10 @@ export default function ContactPage() {
       <section className="max-w-4xl mx-auto px-4 py-10">
         <div className="grid sm:grid-cols-2 gap-5">
           {[
-            { icon: MessageSquare, title: 'General support', email: 'hello@pingrab-self.vercel.app', text: 'Bug reports, feedback, feature requests.' },
-            { icon: Shield, title: 'Privacy enquiries', email: 'privacy@pingrab-self.vercel.app', text: 'Data access, deletion, GDPR/CCPA requests.' },
-            { icon: FileText, title: 'Legal & DMCA', email: 'legal@pingrab-self.vercel.app', text: 'Takedown notices, legal correspondence.' },
-            { icon: Mail, title: 'Partnerships', email: 'partners@pingrab-self.vercel.app', text: 'Advertising, integrations, press.' }
+            { icon: MessageSquare, title: 'General support', email: 'hello@pingrab.click', text: 'Bug reports, feedback, feature requests.' },
+            { icon: Shield, title: 'Privacy enquiries', email: 'privacy@pingrab.click', text: 'Data access, deletion, GDPR/CCPA requests.' },
+            { icon: FileText, title: 'Legal & DMCA', email: 'legal@pingrab.click', text: 'Takedown notices, legal correspondence.' },
+            { icon: Mail, title: 'Partnerships', email: 'partners@pingrab.click', text: 'Advertising, integrations, press.' }
           ].map((c, i) => (
             <a
               key={i}

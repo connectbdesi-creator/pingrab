@@ -17,11 +17,11 @@ export const metadata: Metadata = {
     'save pinterest gif',
     'pin gif saver'
   ],
-  alternates: { canonical: 'https://pingrab-self.vercel.app/gif-downloader' },
+  alternates: { canonical: 'https://pingrab.click/gif-downloader' },
   openGraph: {
     title: 'Pinterest GIF Download — Save Animated GIFs',
     description: 'Download animated GIFs from Pinterest with the loop intact.',
-    url: 'https://pingrab-self.vercel.app/gif-downloader'
+    url: 'https://pingrab.click/gif-downloader'
   }
 };
 

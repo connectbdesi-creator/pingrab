@@ -17,11 +17,11 @@ export const metadata: Metadata = {
     'save pinterest picture',
     'pinterest hd image saver'
   ],
-  alternates: { canonical: 'https://pingrab-self.vercel.app/image-downloader' },
+  alternates: { canonical: 'https://pingrab.click/image-downloader' },
   openGraph: {
     title: 'Pinterest Image Download — Original HD',
     description: 'Download Pinterest photos in original quality. Free & unlimited.',
-    url: 'https://pingrab-self.vercel.app/image-downloader'
+    url: 'https://pingrab.click/image-downloader'
   }
 };
 

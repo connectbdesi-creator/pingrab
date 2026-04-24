@@ -5,7 +5,7 @@ import Prose from '@/components/Prose';
 export const metadata: Metadata = {
   title: 'DMCA Notice & Takedown — PinGrab',
   description: 'How to file a DMCA notice with PinGrab for copyright-infringing content.',
-  alternates: { canonical: 'https://pingrab-self.vercel.app/dmca' }
+  alternates: { canonical: 'https://pingrab.click/dmca' }
 };
 
 export default function DmcaPage() {
@@ -27,7 +27,7 @@ export default function DmcaPage() {
 
         <h2>Filing a notice</h2>
         <p>
-          Email <a href="mailto:dmca@pingrab-self.vercel.app">dmca@pingrab-self.vercel.app</a> with the following information:
+          Email <a href="mailto:dmca@pingrab.click">dmca@pingrab.click</a> with the following information:
         </p>
         <ol>
           <li>Your full legal name, postal address, telephone number, and email.</li>
@@ -41,7 +41,7 @@ export default function DmcaPage() {
         <h2>Counter-notices</h2>
         <p>
           If content attributed to you was blocked in error, you may file a counter-notice to{' '}
-          <a href="mailto:dmca@pingrab-self.vercel.app">dmca@pingrab-self.vercel.app</a> containing your contact information, the URL
+          <a href="mailto:dmca@pingrab.click">dmca@pingrab.click</a> containing your contact information, the URL
           in question, and a statement under penalty of perjury that the material was removed as a result of
           mistake or misidentification.
         </p>

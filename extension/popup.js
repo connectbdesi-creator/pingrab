@@ -1,4 +1,4 @@
-const SITE = 'https://pingrab-self.vercel.app';
+const SITE = 'https://pingrab.click';
 const statusEl = document.getElementById('status');
 const btn = document.getElementById('download');
 

@@ -7,6 +7,6 @@ chrome.commands.onCommand.addListener(async (command) => {
 
 chrome.runtime.onInstalled.addListener((details) => {
   if (details.reason === 'install') {
-    chrome.tabs.create({ url: 'https://pingrab-self.vercel.app/chrome-extension?welcome=1' });
+    chrome.tabs.create({ url: 'https://pingrab.click/chrome-extension?welcome=1' });
   }
 });

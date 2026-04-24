@@ -34,7 +34,7 @@ Manifest V3 browser extension that adds a one-click download button to every Pin
    - 1280×800 screenshots (at least 1, up to 5)
    - 128×128 store icon (reuse `icons/icon128.png`)
    - Category: **Productivity**
-   - Privacy policy URL: `https://pingrab-self.vercel.app/privacy`
+   - Privacy policy URL: `https://pingrab.click/privacy`
 6. Submit for review. First review takes 1–3 business days.
 
 ## Permissions explained (needed for store review)

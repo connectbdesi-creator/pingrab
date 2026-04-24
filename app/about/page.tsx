@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'About PinGrab — The Story Behind Our Pinterest Downloader',
   description:
     'Learn about PinGrab, the team behind the free Pinterest downloader. Our mission, values, and how we build tools for creators.',
-  alternates: { canonical: 'https://pingrab-self.vercel.app/about' }
+  alternates: { canonical: 'https://pingrab.click/about' }
 };
 
 export default function AboutPage() {
@@ -65,7 +65,7 @@ export default function AboutPage() {
         <h2>Contact</h2>
         <p>
           Feedback, bug reports and partnership enquiries are welcome at{' '}
-          <a href="mailto:hello@pingrab-self.vercel.app">hello@pingrab-self.vercel.app</a> or through our{' '}
+          <a href="mailto:hello@pingrab.click">hello@pingrab.click</a> or through our{' '}
           <a href="/contact">contact page</a>.
         </p>
       </Prose>

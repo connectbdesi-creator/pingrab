@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://pingrab-self.vercel.app';
+  const base = 'https://pingrab.click';
   const pages = [
     '',
     '/video-downloader',

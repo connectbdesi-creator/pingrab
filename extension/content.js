@@ -1,7 +1,7 @@
 (() => {
   'use strict';
 
-  const SITE = 'https://pingrab-self.vercel.app';
+  const SITE = 'https://pingrab.click';
   const BTN_CLASS = 'pingrab-dl-btn';
   const PROCESSED = 'pingrab-processed';
 
