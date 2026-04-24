@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 import './globals.css';
+
+const GA_ID = 'G-0Y57PR6JMP';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://pingrab.click'),
@@ -65,7 +68,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-slate-50">{children}</body>
+      <body className="min-h-screen flex flex-col bg-slate-50">
+        {children}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }
