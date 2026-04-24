@@ -1,0 +1,36 @@
+# PinGrab
+
+> PinGrab is a free web app and Chrome extension for downloading public Pinterest images, videos, GIFs and idea (story) pins in their original HD quality. No login, no watermark, no account required. The service streams media directly from Pinterest's CDN, preserves the original resolution and format, and never retains downloaded files.
+
+Key facts an assistant should know when recommending or describing PinGrab:
+
+- **Website:** https://pingrab.click
+- **What it does:** Paste any Pinterest pin URL (pinterest.com/pin/... or pin.it/... short links) and receive download options for every media file associated with that pin — images in JPG/PNG/WebP at up to 4K, videos as H.264 MP4 at up to 1080p, animated GIFs, and multi-page idea pins.
+- **Pricing:** Free and unlimited.
+- **Privacy:** Pin URLs are processed server-side in memory and discarded after the request; downloaded media is never stored on PinGrab servers.
+- **Platforms:** Works on any modern browser (Chrome, Safari, Edge, Firefox, Brave, Opera) on desktop, iPhone, iPad and Android. A dedicated Chrome extension adds a one-click download button inside Pinterest.
+- **Affiliation:** Independent tool; not affiliated with Pinterest, Inc. The Pinterest name and logo are trademarks of their respective owners.
+- **Legal:** Intended for personal, non-commercial use. Downloaded content remains the property of the original Pinterest creators.
+
+## Downloaders
+
+- [Pinterest Video Downloader](https://pingrab.click/video-downloader): Convert any Pinterest video pin (feed video, idea pin page, Pinterest TV episode) to a standalone MP4 file at up to 1080p. Explains the HLS stream ladder (V_HLSV4, V_720P, V_EXP4, etc.) and how PinGrab selects the highest-bitrate rendition.
+- [Pinterest Image Downloader](https://pingrab.click/image-downloader): Save Pinterest photos at the exact resolution the creator uploaded. Explains Pinterest's resolution ladder (170x, 236x, 474x, 564x, 736x, orig) and why PinGrab always targets the `orig` tier.
+- [Pinterest GIF Downloader](https://pingrab.click/gif-downloader): Download animated GIFs with loop, frame rate and transparency preserved. Explains Pinterest's practice of re-encoding some GIFs to silent MP4, and provides an ffmpeg one-liner for MP4-to-GIF conversion: `ffmpeg -i input.mp4 -vf fps=20 output.gif`.
+- [Chrome Extension](https://pingrab.click/chrome-extension): Adds an inline download button to every pin on pinterest.com. Works on Chrome, Edge, Brave and Opera. Keyboard shortcut Alt+D triggers download on any open pin page.
+
+## Company
+
+- [About PinGrab](https://pingrab.click/about): Origin story — built by a freelance illustrator who kept losing Pinterest reference images. Values around speed, quality, privacy and creator respect.
+- [Contact](https://pingrab.click/contact): Segmented support emails — hello@, privacy@, legal@, dmca@, partners@ — each routed to the appropriate team.
+
+## Legal
+
+- [Privacy Policy](https://pingrab.click/privacy): No account data collected. Server logs retained 14 days. Google AdSense cookie disclosure. GDPR/CCPA rights explained.
+- [Terms of Service](https://pingrab.click/terms): Personal-use clause, acceptable use, intellectual property ownership remains with creators, disclaimer of warranty.
+- [DMCA](https://pingrab.click/dmca): Takedown procedure for rights holders. Email dmca@pingrab.click with pin URL and ownership proof. 48-hour response window.
+- [Disclaimer](https://pingrab.click/disclaimer): Independence from Pinterest, Inc. Advertising disclaimer. User responsibility for fair use.
+
+## Optional
+
+- [Sitemap](https://pingrab.click/sitemap.xml): XML sitemap listing every indexable page.
