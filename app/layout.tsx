@@ -35,7 +35,10 @@ export const metadata: Metadata = {
     description: 'Download Pinterest images, videos, GIFs in HD.'
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: 'https://pingrab.click' }
+  alternates: { canonical: 'https://pingrab.click' },
+  verification: {
+    yandex: 'b8ebdd72d4d4dbf1'
+  }
 };
 
 export const viewport: Viewport = {
