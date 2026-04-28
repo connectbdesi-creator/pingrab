@@ -3,31 +3,56 @@ import PageShell from '@/components/PageShell';
 import Hero from '@/components/Hero';
 import Prose from '@/components/Prose';
 import FAQ from '@/components/FAQ';
+import BreadcrumbsJsonLd from '@/components/BreadcrumbsJsonLd';
 import { Image as ImageIcon, Maximize, FileImage, Palette } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Pinterest Image Download — Save Photos in Original Quality',
+  title: 'Pinterest Image Downloader — Free Online, Save HD Photos No Watermark',
   description:
-    'Pinterest image download tool. Save any Pinterest photo in its original HD resolution as JPG, PNG or WebP — no cropping, no compression, no watermark.',
+    'Free Pinterest image downloader online. Save any Pinterest photo in original HD resolution as JPG, PNG or WebP — no cropping, no compression, no watermark, no login required.',
   keywords: [
     'pinterest image download',
     'pinterest image downloader',
+    'pinterest image downloader free',
+    'pinterest image downloader online',
+    'pinterest image downloader no watermark',
     'download pinterest image',
     'pinterest photo download',
     'save pinterest picture',
-    'pinterest hd image saver'
+    'pinterest hd image saver',
+    'pinterest image saver'
   ],
-  alternates: { canonical: 'https://pingrab.click/image-downloader' },
+  alternates: {
+    canonical: 'https://pingrab.click/image-downloader',
+    languages: {
+      'x-default': 'https://pingrab.click/image-downloader',
+      en: 'https://pingrab.click/image-downloader'
+    }
+  },
   openGraph: {
-    title: 'Pinterest Image Download — Original HD',
-    description: 'Download Pinterest photos in original quality. Free & unlimited.',
-    url: 'https://pingrab.click/image-downloader'
+    title: 'Pinterest Image Downloader — Free Online HD No Watermark',
+    description:
+      'Free online Pinterest image download in original HD. No login, no watermark, works everywhere.',
+    url: 'https://pingrab.click/image-downloader',
+    images: ['/opengraph-image']
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pinterest Image Downloader — Free Online HD',
+    description: 'Free Pinterest image download in original quality.',
+    images: ['/opengraph-image']
   }
 };
 
 export default function ImageDownloader() {
   return (
     <PageShell>
+      <BreadcrumbsJsonLd
+        items={[
+          { name: 'Home', url: 'https://pingrab.click' },
+          { name: 'Pinterest Image Downloader', url: 'https://pingrab.click/image-downloader' }
+        ]}
+      />
       <Hero
         title="Pinterest Image"
         highlight="Download"

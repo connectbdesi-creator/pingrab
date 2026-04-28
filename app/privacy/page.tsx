@@ -1,17 +1,35 @@
 import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
 import Prose from '@/components/Prose';
+import BreadcrumbsJsonLd from '@/components/BreadcrumbsJsonLd';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy — PinGrab',
-  description: 'How PinGrab collects, uses and protects your data. Our full privacy policy.',
-  alternates: { canonical: 'https://pingrab.click/privacy' },
+  description: 'How PinGrab collects, uses and protects your data. Our full privacy policy with GDPR/CCPA disclosures.',
+  alternates: {
+    canonical: 'https://pingrab.click/privacy',
+    languages: {
+      'x-default': 'https://pingrab.click/privacy',
+      en: 'https://pingrab.click/privacy'
+    }
+  },
+  openGraph: {
+    title: 'Privacy Policy — PinGrab',
+    url: 'https://pingrab.click/privacy',
+    images: ['/opengraph-image']
+  },
   robots: { index: true, follow: true }
 };
 
 export default function PrivacyPage() {
   return (
     <PageShell>
+      <BreadcrumbsJsonLd
+        items={[
+          { name: 'Home', url: 'https://pingrab.click' },
+          { name: 'Privacy Policy', url: 'https://pingrab.click/privacy' }
+        ]}
+      />
       <section className="bg-gradient-to-b from-brand-50 to-white py-10 md:py-16">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight">Privacy Policy</h1>

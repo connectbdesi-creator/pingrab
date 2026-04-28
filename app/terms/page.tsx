@@ -1,16 +1,34 @@
 import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
 import Prose from '@/components/Prose';
+import BreadcrumbsJsonLd from '@/components/BreadcrumbsJsonLd';
 
 export const metadata: Metadata = {
   title: 'Terms of Service — PinGrab',
-  description: 'The terms and conditions that govern your use of PinGrab.',
-  alternates: { canonical: 'https://pingrab.click/terms' }
+  description: 'The terms and conditions that govern your use of the PinGrab Pinterest downloader.',
+  alternates: {
+    canonical: 'https://pingrab.click/terms',
+    languages: {
+      'x-default': 'https://pingrab.click/terms',
+      en: 'https://pingrab.click/terms'
+    }
+  },
+  openGraph: {
+    title: 'Terms of Service — PinGrab',
+    url: 'https://pingrab.click/terms',
+    images: ['/opengraph-image']
+  }
 };
 
 export default function TermsPage() {
   return (
     <PageShell>
+      <BreadcrumbsJsonLd
+        items={[
+          { name: 'Home', url: 'https://pingrab.click' },
+          { name: 'Terms of Service', url: 'https://pingrab.click/terms' }
+        ]}
+      />
       <section className="bg-gradient-to-b from-brand-50 to-white py-10 md:py-16">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight">Terms of Service</h1>

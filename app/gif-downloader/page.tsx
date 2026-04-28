@@ -3,31 +3,55 @@ import PageShell from '@/components/PageShell';
 import Hero from '@/components/Hero';
 import Prose from '@/components/Prose';
 import FAQ from '@/components/FAQ';
+import BreadcrumbsJsonLd from '@/components/BreadcrumbsJsonLd';
 import { Repeat, Zap, MessageCircle, Layers } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Pinterest GIF Download — Save Animated GIFs Free',
+  title: 'Pinterest GIF Downloader — Free Online, Save Animated GIFs No Watermark',
   description:
-    'Pinterest GIF download tool. Save animated GIFs from any Pinterest pin with the loop and frame rate intact. No login, no watermark.',
+    'Free Pinterest GIF downloader online. Save animated GIFs from any Pinterest pin with the loop, frame rate and transparency intact. No login, no watermark, no app.',
   keywords: [
     'pinterest gif download',
     'pinterest gif downloader',
+    'pinterest gif downloader free',
+    'pinterest gif downloader online',
     'download pinterest gif',
     'animated gif pinterest',
     'save pinterest gif',
-    'pin gif saver'
+    'pin gif saver',
+    'pinterest animated gif download'
   ],
-  alternates: { canonical: 'https://pingrab.click/gif-downloader' },
+  alternates: {
+    canonical: 'https://pingrab.click/gif-downloader',
+    languages: {
+      'x-default': 'https://pingrab.click/gif-downloader',
+      en: 'https://pingrab.click/gif-downloader'
+    }
+  },
   openGraph: {
-    title: 'Pinterest GIF Download — Save Animated GIFs',
-    description: 'Download animated GIFs from Pinterest with the loop intact.',
-    url: 'https://pingrab.click/gif-downloader'
+    title: 'Pinterest GIF Downloader — Free Online No Watermark',
+    description:
+      'Free online Pinterest GIF download with loop preserved. No login, no watermark.',
+    url: 'https://pingrab.click/gif-downloader',
+    images: ['/opengraph-image']
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pinterest GIF Downloader — Free Online',
+    description: 'Save animated GIFs from Pinterest with loop intact.',
+    images: ['/opengraph-image']
   }
 };
 
 export default function GifDownloader() {
   return (
     <PageShell>
+      <BreadcrumbsJsonLd
+        items={[
+          { name: 'Home', url: 'https://pingrab.click' },
+          { name: 'Pinterest GIF Downloader', url: 'https://pingrab.click/gif-downloader' }
+        ]}
+      />
       <Hero
         title="Pinterest GIF"
         highlight="Download"

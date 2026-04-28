@@ -1,16 +1,34 @@
 import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
 import Prose from '@/components/Prose';
+import BreadcrumbsJsonLd from '@/components/BreadcrumbsJsonLd';
 
 export const metadata: Metadata = {
   title: 'Disclaimer — PinGrab',
-  description: 'PinGrab disclaimer. We are an independent tool, not affiliated with Pinterest.',
-  alternates: { canonical: 'https://pingrab.click/disclaimer' }
+  description: 'PinGrab is an independent tool, not affiliated with or endorsed by Pinterest, Inc. Read our full disclaimer.',
+  alternates: {
+    canonical: 'https://pingrab.click/disclaimer',
+    languages: {
+      'x-default': 'https://pingrab.click/disclaimer',
+      en: 'https://pingrab.click/disclaimer'
+    }
+  },
+  openGraph: {
+    title: 'Disclaimer — PinGrab',
+    url: 'https://pingrab.click/disclaimer',
+    images: ['/opengraph-image']
+  }
 };
 
 export default function DisclaimerPage() {
   return (
     <PageShell>
+      <BreadcrumbsJsonLd
+        items={[
+          { name: 'Home', url: 'https://pingrab.click' },
+          { name: 'Disclaimer', url: 'https://pingrab.click/disclaimer' }
+        ]}
+      />
       <section className="bg-gradient-to-b from-brand-50 to-white py-10 md:py-16">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight">Disclaimer</h1>

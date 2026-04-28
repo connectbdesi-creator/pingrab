@@ -3,31 +3,56 @@ import PageShell from '@/components/PageShell';
 import Hero from '@/components/Hero';
 import Prose from '@/components/Prose';
 import FAQ from '@/components/FAQ';
+import BreadcrumbsJsonLd from '@/components/BreadcrumbsJsonLd';
 import { Monitor, Smartphone, Film, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Pinterest Video Download — Save MP4 Videos in HD Free',
+  title: 'Pinterest Video Downloader — Free Online Tool, Save MP4 in HD No Watermark',
   description:
-    'Pinterest video download tool. Convert any Pinterest video to MP4 in HD — works with idea pins, story pins and reels. No login, no watermark.',
+    'Free Pinterest video downloader online. Convert any Pinterest video to MP4 in HD — idea pins, story pins, reels supported. No login, no watermark, no app install needed.',
   keywords: [
     'pinterest video download',
     'pinterest video downloader',
+    'pinterest video downloader free',
+    'pinterest video downloader online',
+    'pinterest video downloader no watermark',
     'download pinterest video',
-    'pinterest mp4',
+    'pinterest mp4 download',
     'save pinterest video hd',
-    'pinterest reels downloader'
+    'pinterest reels downloader',
+    'pinterest video saver'
   ],
-  alternates: { canonical: 'https://pingrab.click/video-downloader' },
+  alternates: {
+    canonical: 'https://pingrab.click/video-downloader',
+    languages: {
+      'x-default': 'https://pingrab.click/video-downloader',
+      en: 'https://pingrab.click/video-downloader'
+    }
+  },
   openGraph: {
-    title: 'Pinterest Video Download — Save MP4 HD',
-    description: 'Free Pinterest video download to MP4 in HD. No login.',
-    url: 'https://pingrab.click/video-downloader'
+    title: 'Pinterest Video Downloader — Free, MP4 HD, No Watermark',
+    description:
+      'Free online Pinterest video download to MP4 in HD. No login, no watermark, works on mobile and desktop.',
+    url: 'https://pingrab.click/video-downloader',
+    images: ['/opengraph-image']
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pinterest Video Downloader — Free MP4 HD',
+    description: 'Free Pinterest video download to MP4 in HD. No watermark.',
+    images: ['/opengraph-image']
   }
 };
 
 export default function VideoDownloader() {
   return (
     <PageShell>
+      <BreadcrumbsJsonLd
+        items={[
+          { name: 'Home', url: 'https://pingrab.click' },
+          { name: 'Pinterest Video Downloader', url: 'https://pingrab.click/video-downloader' }
+        ]}
+      />
       <Hero
         title="Pinterest Video"
         highlight="Download"

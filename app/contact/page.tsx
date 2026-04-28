@@ -1,17 +1,36 @@
 import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
 import Prose from '@/components/Prose';
+import BreadcrumbsJsonLd from '@/components/BreadcrumbsJsonLd';
 import { Mail, Shield, FileText, MessageSquare } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Contact PinGrab',
-  description: 'Get in touch with the PinGrab team for support, feedback, or partnership enquiries.',
-  alternates: { canonical: 'https://pingrab.click/contact' }
+  title: 'Contact PinGrab — Support, Privacy, DMCA & Partnerships',
+  description:
+    'Get in touch with the PinGrab team. Segmented support, privacy, legal/DMCA and partnership emails. We reply within one business day.',
+  alternates: {
+    canonical: 'https://pingrab.click/contact',
+    languages: {
+      'x-default': 'https://pingrab.click/contact',
+      en: 'https://pingrab.click/contact'
+    }
+  },
+  openGraph: {
+    title: 'Contact PinGrab',
+    url: 'https://pingrab.click/contact',
+    images: ['/opengraph-image']
+  }
 };
 
 export default function ContactPage() {
   return (
     <PageShell>
+      <BreadcrumbsJsonLd
+        items={[
+          { name: 'Home', url: 'https://pingrab.click' },
+          { name: 'Contact', url: 'https://pingrab.click/contact' }
+        ]}
+      />
       <section className="bg-gradient-to-b from-brand-50 to-white py-10 md:py-16">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight">Contact us</h1>

@@ -2,30 +2,53 @@ import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
 import Prose from '@/components/Prose';
 import FAQ from '@/components/FAQ';
+import BreadcrumbsJsonLd from '@/components/BreadcrumbsJsonLd';
 import { Chrome, Download, MousePointerClick, Shield, Zap, Eye } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Pinterest Chrome Extension — One-Click Pinterest Download',
+  title: 'Pinterest Chrome Extension — Free One-Click Pinterest Downloader, No Watermark',
   description:
-    'PinGrab Chrome extension adds a one-click download button to every Pinterest pin. Save images, videos and GIFs without leaving Pinterest.',
+    'Free PinGrab Chrome extension. One-click download for Pinterest images, videos and GIFs in HD — no login, no watermark, works on Chrome, Edge, Brave & Opera.',
   keywords: [
     'pinterest chrome extension',
+    'pinterest chrome extension free',
     'pinterest download extension',
     'pinterest downloader chrome',
     'pinterest image extension chrome',
-    'pinterest video extension'
+    'pinterest video extension',
+    'pinterest extension no watermark'
   ],
-  alternates: { canonical: 'https://pingrab.click/chrome-extension' },
+  alternates: {
+    canonical: 'https://pingrab.click/chrome-extension',
+    languages: {
+      'x-default': 'https://pingrab.click/chrome-extension',
+      en: 'https://pingrab.click/chrome-extension'
+    }
+  },
   openGraph: {
-    title: 'PinGrab Chrome Extension',
-    description: 'Download Pinterest pins with one click inside your browser.',
-    url: 'https://pingrab.click/chrome-extension'
+    title: 'PinGrab Chrome Extension — Free One-Click Pinterest Downloader',
+    description:
+      'One-click Pinterest download right inside your browser. Free. No login.',
+    url: 'https://pingrab.click/chrome-extension',
+    images: ['/opengraph-image']
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PinGrab Chrome Extension — Free',
+    description: 'One-click Pinterest downloads inside your browser.',
+    images: ['/opengraph-image']
   }
 };
 
 export default function ChromeExtensionPage() {
   return (
     <PageShell>
+      <BreadcrumbsJsonLd
+        items={[
+          { name: 'Home', url: 'https://pingrab.click' },
+          { name: 'Chrome Extension', url: 'https://pingrab.click/chrome-extension' }
+        ]}
+      />
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white">
         <div className="max-w-5xl mx-auto px-4 py-14 md:py-24 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 text-brand-600 text-sm font-medium mb-6 border border-brand-100">

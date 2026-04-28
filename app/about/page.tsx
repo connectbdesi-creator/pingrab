@@ -1,17 +1,35 @@
 import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
 import Prose from '@/components/Prose';
+import BreadcrumbsJsonLd from '@/components/BreadcrumbsJsonLd';
 
 export const metadata: Metadata = {
-  title: 'About PinGrab — The Story Behind Our Pinterest Downloader',
+  title: 'About PinGrab — The Story Behind Our Free Pinterest Downloader',
   description:
-    'Learn about PinGrab, the team behind the free Pinterest downloader. Our mission, values, and how we build tools for creators.',
-  alternates: { canonical: 'https://pingrab.click/about' }
+    'Learn about PinGrab, the team behind the free Pinterest downloader. Our mission, values, and how we build privacy-friendly tools for creators.',
+  alternates: {
+    canonical: 'https://pingrab.click/about',
+    languages: {
+      'x-default': 'https://pingrab.click/about',
+      en: 'https://pingrab.click/about'
+    }
+  },
+  openGraph: {
+    title: 'About PinGrab',
+    url: 'https://pingrab.click/about',
+    images: ['/opengraph-image']
+  }
 };
 
 export default function AboutPage() {
   return (
     <PageShell>
+      <BreadcrumbsJsonLd
+        items={[
+          { name: 'Home', url: 'https://pingrab.click' },
+          { name: 'About', url: 'https://pingrab.click/about' }
+        ]}
+      />
       <section className="bg-gradient-to-b from-brand-50 to-white py-12 md:py-20">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight">About PinGrab</h1>

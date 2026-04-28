@@ -1,16 +1,34 @@
 import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
 import Prose from '@/components/Prose';
+import BreadcrumbsJsonLd from '@/components/BreadcrumbsJsonLd';
 
 export const metadata: Metadata = {
   title: 'DMCA Notice & Takedown — PinGrab',
-  description: 'How to file a DMCA notice with PinGrab for copyright-infringing content.',
-  alternates: { canonical: 'https://pingrab.click/dmca' }
+  description: 'How to file a DMCA notice with PinGrab. Required information, counter-notices, and 48-hour response window.',
+  alternates: {
+    canonical: 'https://pingrab.click/dmca',
+    languages: {
+      'x-default': 'https://pingrab.click/dmca',
+      en: 'https://pingrab.click/dmca'
+    }
+  },
+  openGraph: {
+    title: 'DMCA — PinGrab',
+    url: 'https://pingrab.click/dmca',
+    images: ['/opengraph-image']
+  }
 };
 
 export default function DmcaPage() {
   return (
     <PageShell>
+      <BreadcrumbsJsonLd
+        items={[
+          { name: 'Home', url: 'https://pingrab.click' },
+          { name: 'DMCA', url: 'https://pingrab.click/dmca' }
+        ]}
+      />
       <section className="bg-gradient-to-b from-brand-50 to-white py-10 md:py-16">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight">DMCA Notice</h1>
