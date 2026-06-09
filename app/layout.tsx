@@ -109,14 +109,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       'No login or signup required',
       'No watermark on downloads',
       'Works on mobile, tablet, and desktop'
-    ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '1247',
-      bestRating: '5',
-      worstRating: '1'
-    }
+    ]
   };
 
   const softwareApp = {
@@ -132,12 +125,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD'
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '1247',
-      bestRating: '5'
     },
     url: SITE_URL
   };
